@@ -17,12 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('bienvenido/', function () {
-    return view('welcome');
-});
+Route::get('fotos', function(){
+    return view('bienvenido');
+})->name('fotos');
 
-Route::get('fotos/{numero?}', function ($numero = '') {
-    return 'Esta en la galeria de fotos: '.$numero;
-})->where('numero', '[0-9]+');
-
-Route::view('galeria','bienvenido',['num' => 125]);
+Route::get('blog', function(){
+    return view('blog');
+})->name('blog');
