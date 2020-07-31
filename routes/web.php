@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('bienvenido/', function () {
+    return view('welcome');
+});
+
+Route::get('fotos/{numero?}', function ($numero = '') {
+    return 'Esta en la galeria de fotos: '.$numero;
+})->where('numero', '[0-9]+');
+
+Route::view('galeria','bienvenido',['num' => 125]);
