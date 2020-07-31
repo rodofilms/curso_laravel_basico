@@ -23,4 +23,4 @@ Route::get('fotos', function(){
 
 Route::get('blog', function(){
     return view('blog');
-})->name('blog');
+})->name('blog'); // se pone un nombre a la ruta para poder llamarla en cualquier parte del codigo, y si cambiamos la direccion de la ruta no se vera afectado en el nombre
