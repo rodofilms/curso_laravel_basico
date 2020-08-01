@@ -13,21 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','PagesController@index');
 
-Route::get('fotos', function(){
-    return view('bienvenido');
-})->name('fotos');
+Route::get('fotos','PagesController@fotos')->name('fotos');
 
-Route::get('blog', function(){
-    return view('blog');
-})->name('blog'); // se pone un nombre a la ruta para poder llamarla en cualquier parte del codigo, y si cambiamos la direccion de la ruta no se vera afectado en el nombre
+Route::get('blog','PagesController@blog')->name('blog'); // se pone un nombre a la ruta para poder llamarla en cualquier parte del codigo, y si cambiamos la direccion de la ruta no se vera afectado en el nombre
 
-Route::get('nosotros/{nombre?}', function($nombre = null){
-    $equipo = ['Ignacio','Juanito','Pedrito'];
-
-    //return view('nosotros',['equipo'=>$equipo]);
-    return view('nosotros',compact('equipo','nombre'));
-})->name('nosotros');
+Route::get('nosotros/{nombre?}','PagesController@nosotros')->name('nosotros');
