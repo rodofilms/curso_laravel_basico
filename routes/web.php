@@ -24,3 +24,10 @@ Route::get('fotos', function(){
 Route::get('blog', function(){
     return view('blog');
 })->name('blog'); // se pone un nombre a la ruta para poder llamarla en cualquier parte del codigo, y si cambiamos la direccion de la ruta no se vera afectado en el nombre
+
+Route::get('nosotros/{nombre?}', function($nombre = null){
+    $equipo = ['Ignacio','Juanito','Pedrito'];
+
+    //return view('nosotros',['equipo'=>$equipo]);
+    return view('nosotros',compact('equipo','nombre'));
+})->name('nosotros');

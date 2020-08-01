@@ -10,17 +10,18 @@
 
     <title>Hello, world!</title>
   </head>
-  <body>
-    <div class="container">
+  <body class="container">
+    <div class="container my-5">
         <a href="{{ route('fotos') }}" class="btn btn-primary">Fotos</a>
         <a href="{{ route('blog') }}" class="btn btn-primary">Blog</a>
+        <a href="{{ route('nosotros') }}" class="btn btn-primary">Nosotros</a>
     </div>
 
     <div class="contaider">
         @yield('seccion')
     </div>
 
-    <div>footer</div>
+    <div class="container bg-dark text-white text-center">Footer</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
