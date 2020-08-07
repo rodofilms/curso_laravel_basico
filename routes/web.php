@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','PagesController@index');
+Route::get('/','PagesController@index')->name('inicio');
+
+Route::get('/detalle{id}','PagesController@detalle')->name('notas.detalle');
 
 Route::get('fotos','PagesController@fotos')->name('fotos');
 

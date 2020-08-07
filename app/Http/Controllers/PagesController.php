@@ -12,6 +12,12 @@ class PagesController extends Controller
         $notas = App\Nota::all();
         return view('welcome',compact('notas'));
     }
+    public function detalle($id){
+        // la funcion findOrFail nos busca el id pero automaticamente nos aplica la exepcion si es que no se encuentra el 'id'
+        $nota = App\Nota::findOrFail($id);
+
+        return view('notas.detalle',compact('nota'));
+    }
     public function fotos(){
         return view('bienvenido');
     }
