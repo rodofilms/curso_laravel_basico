@@ -9,7 +9,8 @@ class PagesController extends Controller
 {
     //
     public function index(){
-        $notas = App\Nota::all();
+        //paginate(num) devuelve los datos paginados automaticamente
+        $notas = App\Nota::paginate(4);
         return view('welcome',compact('notas'));
     }
     public function detalle($id){
@@ -60,6 +61,13 @@ class PagesController extends Controller
         $notaUpdate->save();
 
         return back()->with('mensaje', 'Nota Actualizada');
+    }
+    public function eliminar($id){
+        $notaEliminar = App\Nota::findOrFail($id);
+
+        $notaEliminar->delete();
+
+        return back()->with('mensaje','Nota Eliminada');
     }
 
     public function fotos(){

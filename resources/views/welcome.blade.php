@@ -56,10 +56,21 @@
                         <td>{{$item->descripcion}}</td>
                         <td>
                             <a href=" {{ route('notas.editar',$item) }} " class="btn btn-warning btn-sm">Editar</a>
+
+                            <form action="{{ route('notas.eliminar',$item) }}" class="d-inline" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach 
             </tbody>
         </table>
+
+        <!-- Colocar los links del paginador -->
+        {{ $notas->links() }}
+
+        
     </div>
 @endsection
